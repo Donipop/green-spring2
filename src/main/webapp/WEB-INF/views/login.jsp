@@ -50,24 +50,16 @@
 			if(username.value == '') {
 				checkError.innerHTML = '아이디를 입력하세요';
 				username.focus();
-				return false;
 				e.preventDefault();
-				e.stopPropagation();
 			}
 			else if(passwd.value == '') {
 				checkError.innerHTML = '비밀번호를 입력하세요';
 				passwd.focus();
-				return false;
 				e.preventDefault();
-				e.stopPropagation();
 			}
 			return true;
 		})
 
-        function loginInfo() {
-            username =
-
-        }
 
 
 	}
@@ -104,7 +96,7 @@
                     <td><span id="checkError"></span></td>
                 </tr>
                 <tr>
-                    <td><input type="button" name="login" value="로그인"/></td>
+                    <td><input type="submit" name="login" value="로그인"/></td>
                 </tr>
             </table>
 		</form>
