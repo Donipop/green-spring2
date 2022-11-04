@@ -11,3 +11,17 @@ V
 &src/main/java/com/green/vo/NoteVo.java,a/3/a3edada919a2e687b61c136369c8b801b1e152c4
 O
 src/main/webapp/WEB-INF/web.xml,2/e/2e22b6edd746fa3dc40ad7276c87c8d87d72a392
+w
+G.idea/sonarlint/issuestore/b/f/bf0091580e2fcccabc8c9f4494aed2e8b673036c,2/0/2018365fab712d4d4a360e98979f9d5a2ec53368
+`
+0src/main/webapp/WEB-INF/resources/css/header.css,0/c/0c0a09bafb90714673d94dc041c9dc1b4efc4218
+^
+..idea/artifacts/green_spring2_Web_exploded.xml,1/3/13336e5a6101b55b56cdf95cb5eee76acad9da9c
+Y
+)src/main/webapp/WEB-INF/views/header.html,d/2/d2677f6c02908966cab044d556fb469cb7f16b40
+^
+.src/main/webapp/WEB-INF/resources/js/header.js,7/2/72a950fec203360135d0580c01805a020a22d8dd
+g
+7src/main/java/com/green/controller/IndexController.java,8/f/8fbc017a2d1f65d8c976b9c7f173536fad4ef1c0
+C
+web/WEB-INF/web.xml,c/d/cdcc12da5c4054f6995aab32914d7e0243194c05
