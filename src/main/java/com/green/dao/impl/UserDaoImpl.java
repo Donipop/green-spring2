@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Repository("userDao")
@@ -35,8 +36,13 @@ public class UserDaoImpl implements UserDao {
         sqlSession.insert("User.insertInfo", userVo);
     }
 
-    public UserVo successLogin(UserVo userVo) {
-        return sqlSession.selectOne("User.successLogin", userVo);
+
+    public String loginPasswordCheck(String username) {
+        return sqlSession.selectOne("User.loginPasswordCheck", username);
+    }
+
+    public UserVo selectUserInfoByUsername(String username) {
+        return sqlSession.selectOne("User.selectUserInfoByUsername", username);
     }
 
 }

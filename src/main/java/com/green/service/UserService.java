@@ -12,6 +12,7 @@ public class UserService {
     @Autowired
     private UserDaoImpl userDaoImpl;
 
+
     public List<UserVo> selectAll(){
         return userDaoImpl.selectAll();
     }
@@ -32,8 +33,13 @@ public class UserService {
          userDaoImpl.insertInfo(userVo);
     }
 
-    public UserVo successLogin(UserVo userVo) {
-        return userDaoImpl.successLogin(userVo);
+
+    public String loginPasswordCheck(String username) {
+        return userDaoImpl.loginPasswordCheck(username);
+    }
+
+    public UserVo selectUserInfoByUsername(String username) {
+        return userDaoImpl.selectUserInfoByUsername(username);
     }
 }
 

@@ -37,11 +37,29 @@
 
     </select>
 
+    <select id="loginPasswordCheck"
+            resultType="String">
+        SELECT userpassword
+        FROM   user_tb
+        WHERE  username = #{username}
+
+    </select>
+
     <insert id="insertInfo"
             parameterType="com.green.vo.UserVo">
         INSERT INTO user_tb (_id, username, userpassword, usernickname)
         VALUES (#{_id}, #{username}, #{userpassword}, #{usernickname})
 
     </insert>
+
+    <select id="selectUserInfoByUsername"
+            resultType="com.green.vo.UserVo">
+        SELECT _id, username, userpassword, usernickname
+        FROM   user_tb
+        WHERE  username = #{username}
+
+    </select>
+
+
 
 </mapper>
