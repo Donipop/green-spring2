@@ -32,7 +32,7 @@ public class InquiryController {
         return "inquiryWrite";
     }
 
-    @PostMapping("writeinquiry")
+    @PostMapping("writeinquiry")     // 1:1문의 쓰기
     public String writeinquiry(HttpServletRequest request) {
 
 
@@ -48,8 +48,9 @@ public class InquiryController {
         return "inquiryWrite";
     }
 
+    // 1대1 문의 리스트
     @GetMapping("inquirylistForm")  // /inquirylistForm?num=1
-    public String inquirylistForm(@RequestParam int num, Model model) {
+    public String inquirylistForm(@RequestParam(required = false, defaultValue = "1") int num, Model model) {
 
         page.setNum(num);
         page.setCount(inquiryService.allcount());
@@ -61,7 +62,7 @@ public class InquiryController {
         return "inquirylist";
     }
 
-    @GetMapping("/alllist")  // ajax용
+    @GetMapping("/alllist")  // 1대1 문의 ajax용
     @ResponseBody
     public List<JSONObject> alllist(@RequestParam int num) {
 
@@ -84,9 +85,9 @@ public class InquiryController {
         return NoteVoList;
     }
 
-    @GetMapping("/caselist")  // /caselist?num=1&category=         ajax용
+    @GetMapping("/caselist")  // /caselist?num=1&category=  카테고리별 리스트 ajax용
     @ResponseBody
-    public List<JSONObject> caselist(@RequestParam int num, @RequestParam int category ,Model model) {
+    public List<JSONObject> caselist(@RequestParam(required = false, defaultValue = "1") int num, @RequestParam int category ,Model model) {
 
         page.setNum(num);
         page.setCount(inquiryService.casecount(category));

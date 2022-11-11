@@ -48,6 +48,22 @@
             });
         });
 
+var doubleSubmitFlag = false;
+        function doubleSubmitCheck(){
+            if(doubleSubmitFlag){
+                return doubleSubmitFlag;
+            }else{
+                doubleSubmitFlag = true;
+                return false;
+            }
+        }
+
+        function insert(){
+            if(doubleSubmitCheck()) return;
+
+            alert("메세지 보냄");
+        }
+
     </script>
 
 </head>
@@ -82,7 +98,7 @@
                                     </span>
                         </li>
                     </ul>
-                    <input type="submit" value="보내기">
+                    <input type="submit" value="보내기" onclick="insert();">
                 </div>
             </form>
         </div>

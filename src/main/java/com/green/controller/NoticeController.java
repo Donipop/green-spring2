@@ -19,10 +19,10 @@ import java.util.List;
 public class NoticeController {
     @Autowired private NoticeService noticeService;
 
-    // 공지사항
+    // 공지사항 리스트
     PageVo page = new PageVo();
     @GetMapping("/noticeList") // /noticeList?num=1
-    public String noticeList(@RequestParam int num, Model model){
+    public String noticeList(@RequestParam(required = false, defaultValue = "1") int num, Model model){
 
         page.setNum(num);
         page.setCount(noticeService.noticecount());
@@ -34,7 +34,7 @@ public class NoticeController {
         return "/noticelist";
     }
 
-    @GetMapping("/getnoticelist") // ajax용
+    @GetMapping("/getnoticelist") // 공지사항리스트 ajax용
     @ResponseBody
     public List<JSONObject> getnoticelist(@RequestParam int num){
 
@@ -55,13 +55,13 @@ public class NoticeController {
         return NoteVoList;
     }
 
-    @GetMapping("/noticecontform")
+    @GetMapping("/noticecontform")  // 게시글 내용, 조회수
     public String noticecontform( @RequestParam int _id){
         noticeService.cntup(_id);
         return "/noticecont";
     }
 
-    @GetMapping("/getnoticecont")  // ajax용
+    @GetMapping("/getnoticecont")  // 게시글 내용 ajax용
     @ResponseBody
     public List<JSONObject> getnoticecont(@RequestParam int _id){
 

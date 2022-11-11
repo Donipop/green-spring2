@@ -24,7 +24,7 @@ public class EventController {
 
     //전체 이벤트
     @GetMapping("/eventlistform") // / eventlistform?num=1
-    public String eventlistform(@RequestParam int num, Model model){
+    public String eventlistform(@RequestParam(required = false, defaultValue = "1") int num, Model model){
 
         page.setNum(num);
         page.setCount(eventService.eventcount());
@@ -37,7 +37,7 @@ public class EventController {
     }
 
 
-    @GetMapping("/geteventlist")   // ajax용
+    @GetMapping("/geteventlist")   // 전체 이벤트 ajax용
     @ResponseBody
     public List<JSONObject> geteventlist(@RequestParam int num){
 
@@ -54,18 +54,15 @@ public class EventController {
             obj.put("start_time", vo.getStart_time());
 
             NoteVoList.add(obj);
-            System.out.println(NoteVoList);
         }
         return NoteVoList;
     }
 
     //진행중인 이벤트
     @GetMapping("/noweventlist")  // /noweventlist?num=1
-    public String noweventlist(@RequestParam int num, Model model){
+    public String noweventlist(@RequestParam(required = false, defaultValue = "1") int num, Model model){
 
         LocalDate now = LocalDate.now();
-        //    int count = eventService.noweventcount(now);
-        //   int count2 = eventService.pasteventcount(now);
 
         page.setNum(num);
         page.setCount(eventService.noweventcount(now));
@@ -77,7 +74,7 @@ public class EventController {
         return "/noweventlist";
     }
 
-    @GetMapping("/getnoweventlist") // ajax용
+    @GetMapping("/getnoweventlist") // 진행중인 이벤트 리스트 ajax용
     @ResponseBody
     public List<JSONObject> getnoweventlist(@RequestParam int num){
 
@@ -96,18 +93,15 @@ public class EventController {
             obj.put("start_time", vo.getStart_time());
 
             NoteVoList.add(obj);
-            System.out.println(NoteVoList);
         }
         return NoteVoList;
     }
 
     //지난 이벤트
     @GetMapping("/pasteventlist")   // /pasteventlist?num=1
-    public String pasteventlist(@RequestParam int num, Model model){
+    public String pasteventlist(@RequestParam(required = false, defaultValue = "1") int num, Model model){
 
         LocalDate now = LocalDate.now();
-        //    int count = eventService.noweventcount(now);
-        //   int count2 = eventService.pasteventcount(now);
 
         page.setNum(num);
         page.setCount(eventService.pasteventcount(now));
@@ -119,7 +113,7 @@ public class EventController {
         return "/pasteventlist";
     }
 
-    @GetMapping("/getpasteventlist")   //ajax용
+    @GetMapping("/getpasteventlist")   //지난 이벤트 리스트 ajax용
     @ResponseBody
     public List<JSONObject> getpasteventlist(@RequestParam int num){
 
@@ -138,13 +132,8 @@ public class EventController {
             obj.put("start_time", vo.getStart_time());
 
             NoteVoList.add(obj);
-            System.out.println(NoteVoList);
         }
         return NoteVoList;
     }
-
-
-
-
 
 }

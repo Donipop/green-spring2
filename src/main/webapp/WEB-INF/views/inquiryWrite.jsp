@@ -11,17 +11,20 @@
 
     $(function(){
 
-      $('form').on('submit', function(e){
+        	   $('#submit').on('click', function(e){
 
-        if( $('[name=content]').val() == ''){
-          alert('질문 내용을 입력하세요');
-
-          e.preventDefault();
-          e.stopPropagation();
-        }
-      });
-
-    });
+                  if( $('[name=content]').val() == ''){
+                                  alert('질문 내용을 입력하세요');
+                      			  e.preventDefault();
+                      			  e.stopPropagation();
+                      		  }
+                   if ($('#category').val() == 0){
+                                   alert('카테고리를 선택하세요');
+                                   e.preventDefault();
+                                   e.stopPropagation();
+                    }
+                })
+        	 });
 
 
     $(document).ready(function() {
@@ -37,6 +40,21 @@
       });
     });
 
+var doubleSubmitFlag = false;
+        function doubleSubmitCheck(){
+            if(doubleSubmitFlag){
+                return doubleSubmitFlag;
+            }else{
+                doubleSubmitFlag = true;
+                return false;
+            }
+        }
+
+        function insert(){
+            if(doubleSubmitCheck()) return;
+
+            alert("1대1 문의 보냄");
+        }
 
   </script>
 
@@ -92,6 +110,5 @@
 
 </section>
 
-<!-- <a href="/writeNoteForm" onClick="window.open(this.href, '', 'width=830, height=550'); return false;">쪽지쓰기</a> -->
 </body>
 </html>

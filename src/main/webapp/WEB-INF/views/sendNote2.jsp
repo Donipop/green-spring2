@@ -43,7 +43,7 @@
 						html         += '<td style="text-align: center;">' + _id + '</td>';
 						html         += '<td style="text-align: center; padding-left:30px;">';
 						html         += '<div class="cc">';
-						html         += '<a href ="/readNote?_id='+_id +'">'+ content +'</a>';
+						html         += '<a href ="/readsendNote?_id='+_id +'">'+ content +'</a>';
 						html         += '</div></td>';
 						html         += '<td style="width:170px; text-align: center;">'+ recept +'</td>';
 						html         += '<td style="width:200px; text-align: center;">'+ time +'</td>';
@@ -123,7 +123,6 @@
 
 				<!-- 쪽지함 이동 버튼들 -->
 				<ul class="buttons">
-					<li><button onclick="location.href='/SendMessage?send=1234&num=1'">삭제</button></li>
 					<li><button onclick="location.href='/receptNote?recept=1234&num=1'">받은 쪽지함</button></li>
 					<li><button onclick="location.href='/writeNoteForm'">쪽지 보내기</button></li>
 				</ul>
