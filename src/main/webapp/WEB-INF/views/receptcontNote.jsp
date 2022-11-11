@@ -62,12 +62,12 @@
 <section>
     <div id="main_content">
         <div id="message_box">
-            <h3 id="write_title">내용 보기</h3>
+            <h3 id="write_title">받은 쪽지 내용 보기</h3>
 
 
             <ul class="top_buttons">
-                <li><a href="/receptNote">받은 쪽지함</a></li>
-                <li><a href="/sendNote">보낸 쪽지함</a></li>
+                <li><a href="/receptNote?recept=1234">받은 쪽지함</a></li>
+                <li><a href="/sendNote?send=1234">보낸 쪽지함</a></li>
                 <li><a name="delete" href="/deleteNote?_id=${_id}">쪽지 삭제</a></li>
             </ul>
             <form action="/writeNoteForm" method="post" name="message_form">
