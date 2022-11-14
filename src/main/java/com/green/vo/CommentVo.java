@@ -22,6 +22,7 @@ public class CommentVo {
     public CommentVo() {
     }
 
+
     public int get_id() { return _id;  }
 
     public void set_id(int _id) {
@@ -60,6 +61,7 @@ public class CommentVo {
         this.username = username;
     }
 
+
     @Override
     public String toString() {
         return "CommentVo{" +
@@ -68,8 +70,7 @@ public class CommentVo {
                 ", content='" + content + '\'' +
                 ", time='" + time + '\'' +
                 ", username='" + username + '\'' +
+
                 '}';
     }
-
-
 }
